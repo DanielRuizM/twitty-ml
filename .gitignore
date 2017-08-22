@@ -1,1 +1,2 @@
-/data-api/credentials/dev_credentials.py
+/data-api/credentials/*
+!/data-api/credentials/.gitkeep
