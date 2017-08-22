@@ -4,7 +4,8 @@ import oauth2 as oauth
 import sys
 from credentials import dev_credentials as cred
 import psycopg2
-
+import time
+import datetime
 
 if len(sys.argv) !=3:
     print("""
@@ -16,6 +17,20 @@ if len(sys.argv) !=3:
 
 user_bbdd=sys.argv[1]
 pass_bbdd=sys.argv[2]
+
+ts = time.time()
+st = datetime.datetime.fromtimestamp(ts).strftime('%Y%m%d')
+dia = datetime.datetime.fromtimestamp(ts).strftime('%Y%m%d')
+hora = datetime.datetime.fromtimestamp(ts).strftime('%H%M%S')
+mesdia = datetime.datetime.fromtimestamp(ts).strftime('%m%d')
+mes_anio =datetime.datetime.fromtimestamp(ts).strftime('%m_%Y')
+dia_insert = datetime.datetime.fromtimestamp(ts).utcnow().strftime('%Y-%m-%d')
+hora_insert = datetime.datetime.fromtimestamp(ts).utcnow().strftime('%H:%M:%S')
+date_insert=dia_insert+' '+hora_insert
+
+hoy =  datetime.datetime.fromtimestamp(ts).utcnow()
+stt = st[:8]
+print("ejecucion: "+str(hoy))
 
 consumer = oauth.Consumer(key=cred.consumer_key, secret=cred.consumer_secret)
 access_tokens = oauth.Token(key=cred.access_token, secret=cred.access_token_secret)
