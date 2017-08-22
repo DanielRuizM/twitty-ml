@@ -1,1 +1,3 @@
 /data-api/credentials/*
+*.pyc
+!/data-api/credentials/.gitkeep
