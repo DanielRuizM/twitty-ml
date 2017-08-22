@@ -1,2 +1,2 @@
-/data-api/credentials/*
-!/data-api/credentials/.gitkeep
+data-api/credentials/*
+!data-api/credentials/.gitkeep
